@@ -7,11 +7,38 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var postArr: [PFObject]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let query = PFQuery(className: "Post")
+//        let post = PFObject(className: "Post")
+//        Post["author"] = PFUser.currentUser()
+        
+        query.orderByDescending("_created_at")
+        query.includeKey("author")
+        query.limit = 20
+        
+        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
+            if let posts = posts {
+                self.postArr = posts
+                self.tableView.reloadData()
+            } else {
+               print(error?.localizedDescription)
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -22,8 +49,43 @@ class HomeViewController: UIViewController {
     }
     
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        
+        if postArr != nil{
+            return postArr!.count
+        }
+        else {
+            return 0
+        }
+    }
     
-    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+     
+        let cell = tableView.dequeueReusableCellWithIdentifier("InstaCell", forIndexPath: indexPath) as! InstaCell
+        let post = postArr![indexPath.row]
+        cell.captionLabel.text = post["caption"] as? String
+
+        cell.postImageView.file = post["media"] as? PFFile
+        
+        cell.postImageView.file = post["media"] as? PFFile
+        cell.postImageView.loadInBackground()
+        
+//        if let postImageFile = post["post"] as? PFFile {
+//        
+//            postImageFile.getDataInBackgroundWithBlock {
+//                (imageData: NSData?, error: NSError?) -> Void in
+//                if error == nil {
+//                    if let imageData = imageData{
+//                        let image = UIImage(data: imageData)
+//                        cell.postImageView.image = image
+//                    }
+//                }
+       //     }
+      //  }
+        
+        return cell
+    }
+
     
     
 

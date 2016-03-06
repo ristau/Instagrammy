@@ -97,6 +97,11 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
 
     }
+    
+    
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

@@ -18,6 +18,7 @@
 		E5E68D661C8BB4D30093E742 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D651C8BB4D30093E742 /* Post.swift */; };
 		E5E68D681C8BB6CA0093E742 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D671C8BB6CA0093E742 /* CaptureViewController.swift */; };
 		E5E68D6A1C8BBC820093E742 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D691C8BBC820093E742 /* HomeViewController.swift */; };
+		E5E68D6D1C8BE80D0093E742 /* InstaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D6C1C8BE80D0093E742 /* InstaCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E5E68D651C8BB4D30093E742 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		E5E68D671C8BB6CA0093E742 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		E5E68D691C8BBC820093E742 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E5E68D6C1C8BE80D0093E742 /* InstaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		E5E68D4D1C8A75940093E742 /* Instagrammy */ = {
 			isa = PBXGroup;
 			children = (
+				E5E68D6B1C8BE7960093E742 /* Views */,
 				E5E68D601C8A7FB20093E742 /* ViewControllers */,
 				E5E68D4E1C8A75940093E742 /* AppDelegate.swift */,
 				E5E68D521C8A75940093E742 /* Main.storyboard */,
@@ -109,6 +112,14 @@
 				E5E68D691C8BBC820093E742 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5E68D6B1C8BE7960093E742 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5E68D6C1C8BE80D0093E742 /* InstaCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E68D621C8A7FCA0093E742 /* LoginViewController.swift in Sources */,
+				E5E68D6D1C8BE80D0093E742 /* InstaCell.swift in Sources */,
 				E5E68D681C8BB6CA0093E742 /* CaptureViewController.swift in Sources */,
 				E5E68D511C8A75940093E742 /* ViewController.swift in Sources */,
 				E5E68D641C8B9C250093E742 /* ProfileViewController.swift in Sources */,
