@@ -16,6 +16,8 @@
 		E5E68D621C8A7FCA0093E742 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D611C8A7FCA0093E742 /* LoginViewController.swift */; };
 		E5E68D641C8B9C250093E742 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D631C8B9C250093E742 /* ProfileViewController.swift */; };
 		E5E68D661C8BB4D30093E742 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D651C8BB4D30093E742 /* Post.swift */; };
+		E5E68D681C8BB6CA0093E742 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D671C8BB6CA0093E742 /* CaptureViewController.swift */; };
+		E5E68D6A1C8BBC820093E742 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E68D691C8BBC820093E742 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E5E68D611C8A7FCA0093E742 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E5E68D631C8B9C250093E742 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5E68D651C8BB4D30093E742 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		E5E68D671C8BB6CA0093E742 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		E5E68D691C8BBC820093E742 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				E5E68D501C8A75940093E742 /* ViewController.swift */,
 				E5E68D611C8A7FCA0093E742 /* LoginViewController.swift */,
 				E5E68D631C8B9C250093E742 /* ProfileViewController.swift */,
+				E5E68D671C8BB6CA0093E742 /* CaptureViewController.swift */,
+				E5E68D691C8BBC820093E742 /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E68D621C8A7FCA0093E742 /* LoginViewController.swift in Sources */,
+				E5E68D681C8BB6CA0093E742 /* CaptureViewController.swift in Sources */,
 				E5E68D511C8A75940093E742 /* ViewController.swift in Sources */,
 				E5E68D641C8B9C250093E742 /* ProfileViewController.swift in Sources */,
 				E5E68D4F1C8A75940093E742 /* AppDelegate.swift in Sources */,
+				E5E68D6A1C8BBC820093E742 /* HomeViewController.swift in Sources */,
 				E5E68D661C8BB4D30093E742 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

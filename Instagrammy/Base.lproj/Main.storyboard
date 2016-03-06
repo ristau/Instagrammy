@@ -57,7 +57,7 @@
         <!--Home-->
         <scene sceneID="sJg-c7-vJK">
             <objects>
-                <viewController id="usp-jM-Jja" sceneMemberID="viewController">
+                <viewController id="usp-jM-Jja" customClass="HomeViewController" customModule="Instagrammy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7jt-xW-9gY"/>
                         <viewControllerLayoutGuide type="bottom" id="h1p-sR-2ZP"/>
@@ -84,7 +84,7 @@
         <!--Capture-->
         <scene sceneID="YOS-xl-UVo">
             <objects>
-                <viewController id="mMd-iF-JEp" sceneMemberID="viewController">
+                <viewController id="mMd-iF-JEp" customClass="CaptureViewController" customModule="Instagrammy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SZa-FQ-KM1"/>
                         <viewControllerLayoutGuide type="bottom" id="sL0-AD-fEK"/>
@@ -93,19 +93,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="capture test" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19C-uh-wrH">
-                                <rect key="frame" x="83" y="361" width="99" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="caption" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-g9-uhH">
+                                <rect key="frame" x="65" y="222" width="210" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mqh-WG-bGm">
+                                <rect key="frame" x="50" y="69" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="z2O-ag-IYq" appends="YES" id="Q0h-Sc-rZi"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" image="iconmonstr-photo-camera-9-24" selectedImage="iconmonstr-user-6-24" id="nkx-dZ-h8n"/>
+                    <connections>
+                        <outlet property="captionTextField" destination="Ebh-g9-uhH" id="6PV-Tp-7Vt"/>
+                        <outlet property="captureImageView" destination="Mqh-WG-bGm" id="jtC-Cc-WfL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrr-OT-joL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ikg-qh-zBe"/>
+                <tapGestureRecognizer id="z2O-ag-IYq"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="645"/>
+            <point key="canvasLocation" x="1137" y="653"/>
         </scene>
         <!--Profile-->
         <scene sceneID="tSw-b8-cZA">
@@ -146,7 +160,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="QTG-Ls-UbK">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="73K-cb-dnD" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="73K-cb-dnD" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gqn-9t-BMC">
                         <autoresizingMask key="autoresizingMask"/>
@@ -160,7 +174,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9O-LC-qdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="264"/>
+            <point key="canvasLocation" x="600" y="270"/>
         </scene>
     </scenes>
     <resources>

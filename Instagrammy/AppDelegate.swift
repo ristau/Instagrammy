@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Check if User is Logged In
         if PFUser.currentUser() != nil {
             
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier ("TabBarViewController")
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier ("TabBarController")
             window?.rootViewController = viewController
             
         }
