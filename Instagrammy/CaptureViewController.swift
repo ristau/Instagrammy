@@ -12,16 +12,15 @@ import Parse
 class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    let imagePicker = UIImagePickerController()
+    
     @IBOutlet weak var captureImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var capImageView = captureImageView
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTap:"))
-        capImageView.userInteractionEnabled = true
-        capImageView.addGestureRecognizer(tapGestureRecognizer)
+        imagePicker.delegate = self
         
     }
 
@@ -30,15 +29,6 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    func onTap(sender: UITapGestureRecognizer) {
-        let vc = UIImagePickerController()
-        vc.delegate = self
-        vc.allowsEditing = true
-        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-    }
     
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -46,7 +36,7 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
             let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
             
-            // Do something with the images (based on your use case)
+            captureImageView.image = editedImage
             
             // Dismiss UIImagePickerController to go back to your original view controller
             dismissViewControllerAnimated(true, completion: nil)
@@ -64,6 +54,49 @@ class CaptureViewController: UIViewController, UIImagePickerControllerDelegate, 
         return newImage
     }
     
+    
+    @IBAction func takePhoto(sender: AnyObject) {
+        
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.Camera
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        print("taking photo")
+    
+    }
+    
+    
+    @IBAction func usePhoto(sender: AnyObject) {
+
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        print("finding photo")
+    
+    }
+    
+    @IBAction func submitPhoto(sender: AnyObject) {
+        
+        Post.postUserImage(captureImageView.image, withCaption: captionTextField.text) { (success: Bool, error: NSError?) -> Void in
+            
+            if success {
+                print("Successful Post to Parse")
+                self.captureImageView.image = nil
+                self.captionTextField.text = ""
+            }
+            else {
+                print("Can't post to parse")
+            }
+        }
+
+    }
 
     /*
     // MARK: - Navigation
