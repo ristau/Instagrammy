@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        
+        // Code to initialize Parse
         Parse.initializeWithConfiguration(
             ParseClientConfiguration(block: { (configuration:ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Instagrammy"
@@ -25,6 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://boiling-cliffs-24898.herokuapp.com/parse"
             })
         )
+        
+        // Check if User is Logged In
+        if PFUser.currentUser() != nil {
+            
+            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier ("TabBarViewController")
+            window?.rootViewController = viewController
+            
+        }
         
         return true
     }

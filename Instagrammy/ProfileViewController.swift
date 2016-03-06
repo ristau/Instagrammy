@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController {
 
@@ -26,11 +27,22 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     
-    @IBAction func logOut(sender: AnyObject) {
+    
+    @IBAction func logInStatus(sender: UISwitch) {
+        
+        if sender.selected == true {
+            print("user is logged in")
+        } else {
+            PFUser.logOut()
+            print("user has logged out")
+        }
+        
+        
     }
+   
     
+
     
     /*
     // MARK: - Navigation

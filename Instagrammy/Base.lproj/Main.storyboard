@@ -125,10 +125,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xcX-hd-QFj">
-                                <rect key="frame" x="235" y="441" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bn-dz-iuh">
+                                <rect key="frame" x="222" y="441" width="51" height="31"/>
                                 <connections>
-                                    <action selector="logOut:" destination="aiu-UE-f0g" eventType="valueChanged" id="KsR-Cx-lie"/>
+                                    <action selector="logInStatus:" destination="aiu-UE-f0g" eventType="primaryActionTriggered" id="pL7-re-4kd"/>
                                 </connections>
                             </switch>
                         </subviews>
