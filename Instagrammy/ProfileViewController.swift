@@ -29,18 +29,24 @@ class ProfileViewController: UIViewController {
     
     
     
-    @IBAction func logInStatus(sender: UISwitch) {
-        
-        if sender.selected == true {
-            print("user is logged in")
-        } else {
+    
+    @IBAction func onLogOut(sender: AnyObject) {
             PFUser.logOut()
             print("user has logged out")
-        }
-        
-        
     }
-   
+    
+//    @IBAction func logInStatus(sender: UISwitch) {
+//        
+//        if sender.selected == true {
+//            print("user is logged in")
+//        } else {
+//            PFUser.logOut()
+//            print("user has logged out")
+//        }
+//        
+//        
+//    }
+
     
 
     

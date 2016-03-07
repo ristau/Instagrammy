@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                print(error?.localizedDescription)
             }
         }
+        
+        self.tableView.reloadData()
 
         // Do any additional setup after loading the view.
     }
